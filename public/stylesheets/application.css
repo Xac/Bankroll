@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+a {
+  color: #203b00;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  font-size: 14px;
+  font-family: Helvetica, Arial;
+  background-color: #2d2d2d;
+}
+
+.form {
+  padding: 10px;
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: normal;
+  margin: 3px;
+  color: #203b00;
+  font-family: Georgia, 'Times New Roman';
+}
+
+h2.left_heading {
+  float: left;
+}
+
+#header {
+  background-color: #c3c3c3;
+  background-image: url('../images/header_bg.png');
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 970px;
+  border-bottom: 1px #ccc solid;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+#main_contents {
+  margin: 0 auto;
+  background: #e2e2e2;
+  width: 970px;
+  border-top: 1px #999 solid;
+  margin-bottom: 15px;
+  
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#results_summary {
+  text-align: center;
+  padding: 15px;
+}
+
+#sessions {
+  width: 935px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+table.sessions_list {
+  width: 100%;
+  clear: both;
+  margin: 0 auto;
+  border: 1px #9f9f9f solid;
+  border-collapse: collapse;
+}
+
+.align_right {
+  text-align: right;
+}
+
+.sessions_list td, .sessions_list th {
+  padding: 0.2em 0.4em;
+  font-size: 12px;
+  border-right: 1px #9f9f9f solid;
+  line-height: 17px;
+}
+
+.nav_link {
+  padding-left: 20px;
+  float: left;
+  list-style: none;
+  display: block;
+  padding-top: 10px;
+  width: 222px;
+  line-height: 26px;
+  height: 35px;
+  border-right: 1px #999 solid;
+}
+
+.nav_link img {
+  float: left;
+  display: inline;
+  border: 0;
+  margin-right: 7px;
+}
+
+.sessions_list th {
+  background-image: url('../images/sessions_header.png');
+  color: #fff;  
+}
+
+
+.gain_profit {
+  color: #3A932E;
+}
+
+.gain_loss {
+  color: #E46062;
+}
+
+.gain_neutral {
+  color: #000;
+}
+
+#new_game_session_form {
+  width: 500px;
+}
+
+#new_game_session_form label {
+  font-size: 13px;
+  width: 120px;
+  display: block;
+}
+
+#new_game_session_form .field {
+  margin-bottom: 10px;
+}
+
+#stat_charts {
+  background-color: #999;
+  margin-top: 10px;
+  padding: 10px;
+  
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+

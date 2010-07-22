@@ -1,0 +1,71 @@
+<div id="results_summary">
+  <div id="sessions">
+    <% if @sessions.empty? %>
+      You haven't added any sessions yet.
+      <%= link_to "Click here to add one.", new_game_session_path, :class => "no_sessions" %>
+    <% else %>
+      <h2 class="left_heading">Last 30 Days</h2>
+
+      <table class="sessions_list">
+        <tr>
+          <th>Start Time</th>
+          <th>Game</th>
+          <th>Stakes</th>
+          <th class="align_right">Hours Played</th>
+          <th class="align_right">Hourly Rate</th>
+          <th>Location</th>
+          <th class="align_right">Net Gain</th>
+          <th class="align_right">Bankroll</th>
+        </tr>
+      <% @sessions.each do |session| -%>
+        <tr>
+          <td><%= session.started_at.to_s(:short) %></td>
+          <td><%= session.game.name %></td>
+          <td><%= number_to_currency(session.stake.low) + " / " + number_to_currency(session.stake.high) %></td>
+          <td class="align_right"><%= session.hours_played %></td>
+          <td class="align_right"><%= number_to_currency(session.hourly_rate) %></td>
+          <td><%= session.location.name %></td>
+          <td class="align_right"><%= colorized_gain session.net_gain %></td>
+          <td class="align_right"><%= number_to_currency GameSession.bankroll_on(session.started_at) %></td>
+        </tr>
+      <% end -%>
+      </table>
+    <% end -%>
+  </div>
+  <!-- orders/index.html.erb -->
+  <% 
+    @data = GameSession.profits_by_game.reject{|e| e.net_gain < 0}
+  %>
+  <script type="text/javascript" charset="utf-8">
+    $(function() {
+      new Highcharts.Chart({
+         chart: {
+            renderTo: 'profits_by_game'
+         },
+         title: {
+            text: 'Profits by game type'
+         },
+         tooltip: {
+            formatter: function() {
+               return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+            }
+         },
+         legend: {
+            layout: 'vertical'
+         },
+          series: [{
+            type: 'pie',
+            name: 'Game',
+            data: [
+              <% @data.each_with_index do |session,index| %>
+               ["<%= session.game.name.html_safe %>", <%= session.net_gain %>]<%= ',' unless index+1 == @data.length %>
+              <% end %>
+            ]
+         }]
+      });
+    });
+  </script>
+  <div id="stat_charts">
+    <div id="profits_by_game" style="width:300px; height:300px;"></div>
+  </div>
+</div>

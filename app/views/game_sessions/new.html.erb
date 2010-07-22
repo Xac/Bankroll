@@ -1,0 +1,25 @@
+<div id="new_game_session_form" class="form">
+  <%= form_for(@session) do |f| %>
+    <div class="field">
+      <%= f.label :started_at, "Started at" %>
+      <%= f.text_field :started_at %>
+    </div>
+
+    <div class="field">
+      <%= f.label :ended_at, "Ended at" %>
+      <%= f.text_field :ended_at %><br />
+    </div>
+    
+    <div class="field">
+      <%= f.label :buyin, "Buy in" %>
+      <%= f.text_field :buyin %><br />
+    </div>
+    
+    <div class="field">
+      <%= f.label :cash_out, "Cash out" %>
+      <%= f.text_field :cash_out %>
+    </div>
+    
+    <%= f.submit "Create" %>
+  <% end %>
+</div>

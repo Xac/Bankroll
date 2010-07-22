@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Three</title>
+  <%= stylesheet_link_tag 'application' %>
+  <%= csrf_meta_tag %>
+  
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" %>
+  
+  <%= javascript_include_tag "/fancybox/jquery.fancybox-1.3.1.pack.js" %>
+  <%= stylesheet_link_tag "/fancybox/jquery.fancybox-1.3.1.css" %>
+
+  <%= javascript_include_tag "/highcharts/js/highcharts.js" %>
+  <%= javascript_include_tag "jquery.form.js" %>
+  
+  <%= javascript_include_tag 'rails' %>
+  <%= javascript_include_tag "application" %>
+</head>
+<body>
+  <div id="header">
+    <ul class="clearfix">
+      <li class="nav_link">
+        <%= link_to image_tag('icons/new_session.png') + " Record new session", new_game_session_path, :class => "add_session_link remote" %>
+      </li>
+      <li class="nav_link">
+        <%= link_to image_tag('icons/casino.png') + " Manage locations", new_game_session_path, :class => "add_session_link remote" %>
+      </li>
+      <li class="nav_link">
+        <%= link_to image_tag('icons/chip.png') + " Manage games", new_game_session_path, :class => "add_session_link remote" %>
+      </li>
+    </ul>
+  </div>
+  <div id="main_contents">
+    <%= yield %>
+  </div>
+</body>
+</html>
